@@ -1,4 +1,7 @@
 # GoCD Helm Chart
+
+[![Join the chat at https://gitter.im/gocd/gocd](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/gocd/gocd?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 A GoCD Helm chart for Kubernetes. [GoCD](https://www.gocd.org/) is an Open source continuous delivery server to model and visualize complex workflows with ease.
 
 > ### **Warning**: GoCD helm chart is still under development. Users are not expected to use it in production!
