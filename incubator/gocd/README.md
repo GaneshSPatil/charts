@@ -49,20 +49,22 @@ The following tables lists the configurable parameters of the GoCD chart and the
 
 ### GoCD Server
 
-| Parameter                             | Description                                                                                                   | Default             |
-| ------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------- |
-| `server.replicaCount`                 | GoCD Server replicas Count. Supported values are `0`: `Agent Only Deployment`, `1`: `Agent-Server Deployment` | `1`                 |
-| `server.image.repository`             | GoCD server image                                                                                             | `gocd/gocd-server`  |
-| `server.image.tag`                    | GoCD server image tag                                                                                         | `.Chart.appVersion` |
-| `server.image.pullPolicy`             | Image pull policy                                                                                             | `IfNotPresent`      |
-| `server.env.goServerSystemProperties` | GoCD Server system properties                                                                                 | `nil`               |
-| `server.service.type`                 | Type of GoCD server Kubernetes service                                                                        | `NodePort`          |
-| `server.service.httpPort`             | GoCD server service HTTP port                                                                                 | `8153`              |
-| `server.service.httpsPort`            | GoCD server service HTTPS port                                                                                | `8154`              |  
-| `server.service.nodeHttpPort`         | GoCD server service node HTTP port. **Note**: A random nodePort will get assigned if not specified            | `nil`               |  
-| `server.service.nodeHttpsPort`        | GoCD server service node HTTPS port. **Note**: A random nodePort will get assigned if not specified           | `nil`               |  
-| `server.ingress.enabled`              | Enable GoCD ingress.                                                                                          | `false`             |  
-| `server.ingress.hosts`                | GoCD ingress hosts records.                                                                                   | `nil`               |  
+| Parameter                                  | Description                                                                                                   | Default             |
+| ------------------------------------------ | ------------------------------------------------------------------------------------------------------------- | ------------------- |
+| `server.replicaCount`                      | GoCD Server replicas Count. Supported values are `0`: `Agent Only Deployment`, `1`: `Agent-Server Deployment` | `1`                 |
+| `server.image.repository`                  | GoCD server image                                                                                             | `gocd/gocd-server`  |
+| `server.image.tag`                         | GoCD server image tag                                                                                         | `.Chart.appVersion` |
+| `server.image.pullPolicy`                  | Image pull policy                                                                                             | `IfNotPresent`      |
+| `server.env.goServerSystemProperties`      | GoCD Server system properties                                                                                 | `nil`               |
+| `server.service.type`                      | Type of GoCD server Kubernetes service                                                                        | `NodePort`          |
+| `server.service.httpPort`                  | GoCD server service HTTP port                                                                                 | `8153`              |
+| `server.service.httpsPort`                 | GoCD server service HTTPS port                                                                                | `8154`              |  
+| `server.service.nodeHttpPort`              | GoCD server service node HTTP port. **Note**: A random nodePort will get assigned if not specified            | `nil`               |  
+| `server.service.nodeHttpsPort`             | GoCD server service node HTTPS port. **Note**: A random nodePort will get assigned if not specified           | `nil`               |  
+| `server.ingress.enabled`                   | Enable GoCD ingress.                                                                                          | `false`             |  
+| `server.ingress.hosts`                     | GoCD ingress hosts records.                                                                                   | `nil`               |
+| `server.livenessProbe.initialDelaySeconds` | GoCD server start up time.                                                                                    | `180`               |
+| `server.livenessProbe.periodSeconds`       | GoCD server heath check interval period.                                                                      | `5`                 |
 
 ### GoCD Agent
 
