@@ -42,13 +42,13 @@ spec:
             - containerPort: 8154
           livenessProbe:
             httpGet:
-              path: /go/auth/login
+              path: /go/api/v1/health
               port: 8153
             initialDelaySeconds: {{ .Values.server.livenessProbe.initialDelaySeconds }}
             periodSeconds: {{ .Values.server.livenessProbe.periodSeconds }}
           readinessProbe:
             httpGet:
-              path: /go/auth/login
+              path: /go/api/v1/health
               port: 8153
             initialDelaySeconds: {{ .Values.server.livenessProbe.initialDelaySeconds }}
           {{- if .Values.server.persistence.enabled }}
