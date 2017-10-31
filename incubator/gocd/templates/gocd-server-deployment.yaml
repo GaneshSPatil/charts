@@ -44,13 +44,13 @@ spec:
             httpGet:
               path: /go/api/v1/health
               port: 8153
-            initialDelaySeconds: {{ .Values.server.livenessProbe.initialDelaySeconds }}
-            periodSeconds: {{ .Values.server.livenessProbe.periodSeconds }}
+            initialDelaySeconds: {{ .Values.server.healthCheck.initialDelaySeconds }}
+            periodSeconds: {{ .Values.server.healthCheck.periodSeconds }}
           readinessProbe:
             httpGet:
               path: /go/api/v1/health
               port: 8153
-            initialDelaySeconds: {{ .Values.server.livenessProbe.initialDelaySeconds }}
+            initialDelaySeconds: {{ .Values.server.healthCheck.initialDelaySeconds }}
           {{- if .Values.server.persistence.enabled }}
           volumeMounts:
           - name: godata-vol
