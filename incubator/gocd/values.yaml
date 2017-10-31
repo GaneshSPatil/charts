@@ -76,6 +76,8 @@ agent:
     agentAutoRegisterEnvironemnts:
     agentAutoRegisterHostname:
     goAgentSystemProperties:
+    goAgentBootstrapperArgs:
+    goAgentBootstrapperJvmArgs:
   persistence:
     enabled: false
     homego:

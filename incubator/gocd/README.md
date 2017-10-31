@@ -79,6 +79,8 @@ The following tables lists the configurable parameters of the GoCD chart and the
 | `agent.env.agentAutoRegisterResources`    | Comma separated list of GoCD Agent resources                                                        | `nil`                        |
 | `agent.env.agentAutoRegisterEnvironemnts` | Comma separated list of GoCD Agent environments                                                     | `nil`                        |
 | `agent.env.agentAutoRegisterHostname`     | GoCD Agent hostname                                                                                 | `nil`                        |
+| `agent.env.goAgentBootstrapperArgs`       | GoCD Agent Bootstrapper Args.                                                                       | `nil`                        |
+| `agent.env.goAgentBootstrapperJvmArgs`    | GoCD Agent Bootstrapper JVM Args.                                                                   | `nil`                        |
 | `agent.healthCheck.enabled`               | Enable use of GoCD agent health checks.                                                             | `false`                      |
 | `agent.healthCheck.initialDelaySeconds`   | GoCD agent start up time.                                                                           | `180`                        |
 | `agent.healthCheck.periodSeconds`         | GoCD agent heath check interval period.                                                             | `60`                         |
