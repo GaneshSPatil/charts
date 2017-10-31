@@ -109,36 +109,42 @@ a previously configured Persistent Volume Claim can be used.
 
 | Parameter                                | Description                               | Default              |
 | ---------------------------------------- | ----------------------------------------- | -------------------- |
-| `server.persistence.enabled`             | Enable the use of a GoCD PVC              | `false`              |
+| `server.persistence.enabled`             | Enable the use of a GoCD server PVC       | `false`              |
 | `server.persistence.godata.pvName`       | Provide the name of a PV for `godata` PVC | `godata-gocd-server` |
 | `server.persistence.godata.name`         | The PVC name                              | `godata-pvc`         |
 | `server.persistence.godata.accessMode`   | The PVC access mode                       | `ReadWriteOnce`      |
 | `server.persistence.godata.size`         | The size of the PVC                       | `1Gi`                |
-| `server.persistence.homego.storageClass` | The PVC storage class name                | `nil`                |
+| `server.persistence.godata.storageClass` | The PVC storage class name                | `nil`                |
 
-### Server `/homego` persistence Values
+### Server `/home/go` persistence Values
 
 
 | Parameter                                | Description                               | Default              |
 | ---------------------------------------- | ----------------------------------------- | -------------------- |
-| `server.persistence.enabled`             | Enable the use of a GoCD PVC              | `false`              |
-| `server.persistence.homego.pvName`       | Provide the name of a PV for `godata` PVC | `godata-gocd-server` |
-| `server.persistence.homego.name`         | The PVC name                              | `godata-pvc`         |
+| `server.persistence.enabled`             | Enable the use of a GoCD server PVC       | `false`              |
+| `server.persistence.homego.pvName`       | Provide the name of a PV for `godata` PVC | `homego-gocd-server` |
+| `server.persistence.homego.name`         | The PVC name                              | `homego-pvc`         |
 | `server.persistence.homego.accessMode`   | The PVC access mode                       | `ReadWriteOnce`      |
 | `server.persistence.homego.size`         | The size of the PVC                       | `1Gi`                |
 | `server.persistence.homego.storageClass` | The PVC storage class name                | `nil`                |
 
-### Agent `/godata` persistence Values
+### Agent `/home/go` persistence Values
 
+##### Note:
+
+`/home/go` directory shared between multiple agents implies:
+
+1. That packages being cached here is shared between all the agents.
+1. That all the agents sharing this directory are privy to all the secrets in `/home/go`
 
 | Parameter                                | Description                               | Default              |
 | ---------------------------------------- | ----------------------------------------- | -------------------- |
-| `agent.persistence.enabled`             | Enable the use of a GoCD PVC              | `false`              |
-| `agent.persistence.godata.pvName`       | Provide the name of a PV for `godata` PVC | `godata-gocd-server` |
-| `agent.persistence.godata.name`         | The PVC name                              | `godata-pvc`         |
-| `agent.persistence.godata.accessMode`   | The PVC access mode                       | `ReadWriteOnce`      |
-| `agent.persistence.godata.size`         | The size of the PVC                       | `1Gi`                |
-| `agent.persistence.homego.storageClass` | The PVC storage class name                | `nil`                |
+| `agent.persistence.enabled`             | Enable the use of a GoCD agent PVC         | `false`              |
+| `agent.persistence.homego.pvName`       | Provide the name of a PV for `homego` PVC  | `gocd-agent`         |
+| `agent.persistence.homego.name`         | The PVC name                               | `homego-agent-pvc`   |
+| `agent.persistence.homego.accessMode`   | The PVC access mode                        | `ReadWriteOnce`      |
+| `agent.persistence.homego.size`         | The size of the PVC                        | `1Gi`                |
+| `agent.persistence.homego.storageClass` | The PVC storage class name                 | `nil`                |
 
 
 
