@@ -7,5 +7,5 @@ icon: https://cdn.rawgit.com/gocd/gocd-chocolatey/43ae0ef2/go-logo-192px.svg
 sources:
 - https://github.com/gocd/gocd
 maintainers:
-- name: Thoughtworks
+- name: ThoughtWorks, Inc.
   email: godev+k8s@thoughtworks.com
