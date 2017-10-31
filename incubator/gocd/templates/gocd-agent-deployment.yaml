@@ -57,6 +57,20 @@ spec:
           - name: GO_AGENT_SYSTEM_PROPERTIES
             value: {{ .Values.agent.env.goAgentSystemProperties }}
           {{- end }}
+          {{- if .Values.agent.livenessProbe.enabled }}
+          livenessProbe:
+            httpGet:
+              path: /health/v1/isConnectedToServer
+              port: 8152
+            initialDelaySeconds: {{ .Values.agent.livenessProbe.initialDelaySeconds }}
+            failureThreshold: {{ .Values.agent.livenessProbe.failureThreshold }}
+            periodSeconds: {{ .Values.agent.livenessProbe.periodSeconds }}
+          readinessProbe:
+            httpGet:
+              path: /health/v1/isConnectedToServer
+              port: 8152
+            initialDelaySeconds: {{ .Values.agent.livenessProbe.initialDelaySeconds }}
+          {{- end }}
           {{- if .Values.agent.persistence.enabled }}
           volumeMounts:
           - name: homego-vol

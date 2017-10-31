@@ -68,17 +68,21 @@ The following tables lists the configurable parameters of the GoCD chart and the
 
 ### GoCD Agent
 
-| Parameter                                 | Description                                     | Default                      |
-| ----------------------------------------- | ----------------------------------------------- | ---------------------------- |
-| `agent.replicaCount`                      | GoCD Agent replicas Count                       | `1`                          |
-| `agent.image.repository`                  | GoCD agent image                                | `gocd/gocd-agent-alpine-3.6` |
-| `agent.image.tag`                         | GoCD agent image tag                            | `.Chart.appVersion`          |
-| `agent.image.pullPolicy`                  | Image pull policy                               | `IfNotPresent`               |
-| `agent.env.goServerUrl`                   | GoCD Server Url                                 | `nil`                        |
-| `agent.env.agentAutoRegisterKey`          | GoCD Agent autoregister key                     | `nil`                        |
-| `agent.env.agentAutoRegisterResources`    | Comma separated list of GoCD Agent resources    | `nil`                        |
-| `agent.env.agentAutoRegisterEnvironemnts` | Comma separated list of GoCD Agent environments | `nil`                        |
-| `agent.env.agentAutoRegisterHostname`     | GoCD Agent hostname                             | `nil`                        |
+| Parameter                                 | Description                                                                                         | Default                      |
+| ----------------------------------------- | --------------------------------------------------------------------------------------------------- | ---------------------------- |
+| `agent.replicaCount`                      | GoCD Agent replicas Count                                                                           | `1`                          |
+| `agent.image.repository`                  | GoCD agent image                                                                                    | `gocd/gocd-agent-alpine-3.6` |
+| `agent.image.tag`                         | GoCD agent image tag                                                                                | `.Chart.appVersion`          |
+| `agent.image.pullPolicy`                  | Image pull policy                                                                                   | `IfNotPresent`               |
+| `agent.env.goServerUrl`                   | GoCD Server Url                                                                                     | `nil`                        |
+| `agent.env.agentAutoRegisterKey`          | GoCD Agent autoregister key                                                                         | `nil`                        |
+| `agent.env.agentAutoRegisterResources`    | Comma separated list of GoCD Agent resources                                                        | `nil`                        |
+| `agent.env.agentAutoRegisterEnvironemnts` | Comma separated list of GoCD Agent environments                                                     | `nil`                        |
+| `agent.env.agentAutoRegisterHostname`     | GoCD Agent hostname                                                                                 | `nil`                        |
+| `agent.livenessProbe.enabled`             | Enable use of GoCD agent health checks.                                                             | `false`                      |
+| `agent.livenessProbe.initialDelaySeconds` | GoCD agent start up time.                                                                           | `180`                        |
+| `agent.livenessProbe.periodSeconds`       | GoCD agent heath check interval period.                                                             | `60`                         |
+| `agent.livenessProbe.failureThreshold`    | GoCD agent heath check failure threshold. After failure threshold timeout, agent will be restarted. | `60`                         |
 
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`.
 
