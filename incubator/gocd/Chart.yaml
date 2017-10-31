@@ -4,6 +4,15 @@ version: 0.1.0
 appVersion: 17.11.0
 description: A GoCD Helm chart for Kubernetes. GoCD is an Open source continuous delivery server to model and visualize complex workflows with ease.
 icon: https://cdn.rawgit.com/gocd/gocd-chocolatey/43ae0ef2/go-logo-192px.svg
+keywords:
+- gocd
+- ci
+- cd
+- ci/cd
+- continuous-integration
+- continuous-delivery
+- continuous-deployment
+- continuous-testing
 sources:
 - https://github.com/gocd/gocd
 maintainers:
