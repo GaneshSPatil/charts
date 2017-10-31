@@ -25,7 +25,7 @@ server:
   # nodeSelector: {}
   # This is used to select which node to run the particular pod on. Remove the curly braces and adjust the node selector as necessary. This will select the node which matches the labels provided in the nodeSelector.
 
-  livenessProbe:
+  healthCheck:
     initialDelaySeconds: 180
     periodSeconds: 5
   env:
@@ -86,7 +86,7 @@ agent:
       storageClass:
       ExistingClaim:
 
-  livenessProbe:
+  healthCheck:
     enabled: false
     initialDelaySeconds: 180
     periodSeconds: 60
