@@ -57,6 +57,14 @@ spec:
           - name: GO_AGENT_SYSTEM_PROPERTIES
             value: {{ .Values.agent.env.goAgentSystemProperties }}
           {{- end }}
+          {{- if .Values.agent.env.goAgentBootstrapperJvmArgs }}
+          - name: AGENT_BOOTSTRAPPER_JVM_ARGS
+            value: {{ .Values.agent.env.goAgentBootstrapperJvmArgs }}
+          {{- end }}
+          {{- if .Values.agent.env.goAgentBootstrapperArgs }}
+          - name: AGENT_BOOTSTRAPPER_ARGS
+            value: {{ .Values.agent.env.goAgentBootstrapperArgs }}
+          {{- end }}
           {{- if .Values.agent.healthCheck.enabled }}
           livenessProbe:
             httpGet:
